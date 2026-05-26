@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandesh Welivitigoda | Cyber Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        body { background-color: #030712; color: #e2e8f0; line-height: 1.6; }
+        
+        /* Terminal Navigation */
+        nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 2px solid #06b6d4; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: #06b6d4; letter-spacing: 2px; font-family: 'Courier New', Courier, monospace; }
+        .nav-links { display: flex; list-style: none; gap: 35px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #22c55e; }
+
+        /* Structural Framework */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 120px 0 80px 0; }
+        .section-title { text-align: center; font-size: 2.2rem; color: #fff; margin-bottom: 10px; font-weight: 700; letter-spacing: 1px; }
+        .glow-line { width: 100px; height: 2px; background: #22c55e; margin: 0 auto 50px auto; box-shadow: 0 0 10px #22c55e; }
+
+        /* Technical Cyber Hero Layout */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; }
+        .hero-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 60px; }
+        .hero-left { flex: 1.2; }
+        .hero-right { flex: 0.8; display: flex; justify-content: center; position: relative; }
+        
+        .status-badge { color: #22c55e; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 15px; border: 1px solid #22c55e; padding: 4px 12px; display: inline-block; border-radius: 4px; background: rgba(34, 197, 94, 0.1); font-family: 'Courier New', Courier, monospace; }
+        .name { font-size: 3.5rem; color: #fff; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero-desc { color: #94a3b8; font-size: 1.05rem; max-width: 550px; margin-bottom: 40px; }
+        
+        .btn-container { display: flex; gap: 20px; }
+        .btn { padding: 14px 30px; border-radius: 4px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; letter-spacing: 0.5px; }
+        .btn-fill { background: #22c55e; color: #030712; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+        .btn-fill:hover { background: #030712; color: #22c55e; border: 1px solid #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+        .btn-outline { border: 1px solid #06b6d4; color: #06b6d4; }
+        .btn-outline:hover { background: rgba(6, 182, 212, 0.1); box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); }
+
+        /* Floating Pill Badges */
+        .floating-pill { position: absolute; background: rgba(3, 7, 18, 0.9); border: 1px solid #06b6d4; padding: 18px 28px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); animation: float 5s ease-in-out infinite; }
+        .floating-pill i { font-size: 2rem; }
+        .floating-pill span { font-size: 0.85rem; font-weight: 600; color: #fff; letter-spacing: 1px; font-family: 'Courier New', Courier, monospace; }
+        .pill-1 { top: -20px; left: 0; color: #38bdf8; animation-delay: 0s; }
+        .pill-2 { bottom: 20px; left: -40px; color: #22c55e; animation-delay: 1.5s; border-color: #22c55e; }
+        .pill-3 { top: 40%; right: -20px; color: #ef4444; animation-delay: 3s; border-color: #ef4444; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+        /* About Profile Section */
+        .about-wrapper { display: flex; gap: 60px; align-items: center; }
+        .about-left { flex: 1; display: flex; justify-content: center; }
+        .about-frame { position: relative; width: 320px; height: 320px; padding: 4px; border: 2px dashed #06b6d4; border-radius: 8px; }
+        .about-img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; filter: none; }
+        .about-right { flex: 1.5; }
+        .about-text { color: #94a3b8; font-size: 1.05rem; margin-bottom: 25px; }
+
+        /* Secure Repository Grid Layout */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .project-card { background: #0b1329; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 8px; padding: 30px; transition: all 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .project-card:hover { border-color: #22c55e; box-shadow: 0 0 15px rgba(34, 197, 94, 0.2); transform: translateY(-3px); }
+        .proj-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px dashed rgba(6, 182, 212, 0.2); padding-bottom: 10px; }
+        .proj-icon { font-size: 1.4rem; color: #22c55e; }
+        .proj-title { font-size: 1.3rem; color: #fff; margin-bottom: 15px; font-weight: 700; }
+        .proj-desc { color: #94a3b8; font-size: 0.95rem; margin-bottom: 25px; list-style-type: none; }
+        .proj-desc li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+        .proj-desc li::before { content: ">"; color: #22c55e; position: absolute; left: 0; font-weight: bold; font-family: 'Courier New', Courier, monospace; }
+        .proj-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag { background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: #06b6d4; font-size: 0.75rem; padding: 4px 12px; border-radius: 4px; font-weight: 600; }
+
+        /* Skills Layout */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .skills-card { background: #0b1329; border: 1px solid rgba(6, 182, 212, 0.1); padding: 35px 30px; border-radius: 8px; position: relative; }
+        .skills-icon { font-size: 1.8rem; color: #06b6d4; margin-bottom: 20px; }
+        .skills-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 15px; }
+        .skills-list { color: #94a3b8; font-size: 0.95rem; }
+
+        /* Contact Terminal Layout */
+        .contact-wrapper { display: flex; gap: 60px; }
+        .contact-left { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .contact-right { flex: 1.2; background: #0b1329; border: 1px solid rgba(6, 182, 212, 0.2); padding: 40px; border-radius: 8px; }
+        .info-card { background: #0b1329; border: 1px solid rgba(6, 182, 212, 0.1); padding: 25px; border-radius: 8px; display: flex; align-items: center; gap: 20px; text-decoration: none; transition: all 0.3s; }
+        .info-card:hover { border-color: #22c55e; transform: translateX(5px); }
+        .info-icon { width: 50px; height: 50px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #06b6d4; }
+        .info-label { font-size: 0.8rem; color: #64748b; font-weight: 600; letter-spacing: 1px; font-family: 'Courier New', Courier, monospace; }
+        .info-text { font-size: 1rem; color: #f1f5f9; font-weight: 500; margin-top: 2px; }
+
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px; }
+        .form-input { width: 100%; background: #030712; border: 1px solid #334155; padding: 16px; border-radius: 4px; color: #fff; font-size: 1rem; transition: border-color 0.3s; }
+        .form-input:focus { outline: none; border-color: #22c55e; }
+        textarea.form-input { height: 140px; resize: none; }
+        .btn-submit { width: 100%; background: transparent; border: 1px solid #22c55e; color: #22c55e; padding: 16px; border-radius: 4px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 0 10px rgba(34, 197, 94, 0.1); transition: all 0.3s; }
+        .btn-submit:hover { background: #22c55e; color: #030712; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+
+        /* Responsive Mobile Layouts */
+        @media (max-width: 850px) {
+            nav { padding: 20px 5%; }
+            .nav-links { display: none; }
+            .hero-wrapper, .about-wrapper, .contact-wrapper { flex-direction: column; text-align: center; gap: 50px; }
+            .hero-right { height: 250px; width: 100%; }
+            .floating-pill { padding: 12px 20px; }
+            .pill-1 { top: 0; left: 15%; }
+            .pill-2 { bottom: 0; left: 5%; }
+            .pill-3 { top: 30%; right: 10%; }
+            .about-left { order: -1; }
+            .contact-left { width: 100%; }
+            .info-card { text-align: left; }
+            .name { font-size: 2.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">[SANDESH.EXE]</div>
+        <ul class="nav-links">
+            <li><a href="#home">./home</a></li>
+            <li><a href="#about">./about</a></li>
+            <li><a href="#projects">./projects</a></li>
+            <li><a href="#skills">./skills</a></li>
+            <li><a href="#contact">./contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-left">
+                    <div class="status-badge">STATUS: SECURE_CONNECTED</div>
+                    <h1 class="name">Sandesh<br>Welivitigoda</h1>
+                    <p class="hero-desc">Computer Science undergraduate with a strong foundation of Technical knowledge while learning with curiosity. Learning and adapting with new upcoming technology while doing extra Curricular activities.</p>
+                    <div class="btn-container">
+                        <a href="#projects" class="btn btn-fill">Decrypt Projects <i class="fa-solid fa-terminal"></i></a>
+                        <a href="#contact" class="btn btn-outline">Establish Link</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="floating-pill pill-1">
+                        <i class="fa-brands fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="floating-pill pill-2">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Security</span>
+                    </div>
+                    <div class="floating-pill pill-3">
+                        <i class="fa-brands fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">SYSTEM_INFO</h2>
+            <div class="glow-line"></div>
+            <div class="about-wrapper">
+                <div class="about-left">
+                    <div class="about-frame">
+                        <img class="about-img" src="Sandesh.jpg" alt="Sandesh Welivitigoda">
+                    </div>
+                </div>
+                <div class="about-right">
+                    <p class="about-text">I am a passionate Computer Science Undergraduate pursuing my Bachelor of Science (Honours) degree at the Informatics Institute of Technology (IIT), Colombo.</p>
+                    <p class="about-text">I thrive on adapting to emerging technologies, structural programming, and building scalable full-stack integrations. Beyond academics, I participate in extra-curricular systems to continuously sharpen my critical thinking capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">REPOSITORIES</h2>
+            <div class="glow-line"></div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div>
+                        <div class="proj-header">
+                            <div class="proj-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <a style="color: #06b6d4;" href="https://github.com/Weliviti/CareerVerse" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                        </div>
+                        <h3 class="proj-title">CareerVerse</h3>
+                        <ul class="proj-desc">
+                            <li>Built an interactive Unity WebGL simulation game using smart AI agents.</li>
+                            <li>Created fast FastAPI RESTful APIs for giving live user feedback.</li>
+                            <li>Developed a real-time scoring system to track player performance instantly.</li>
+                            <li>Added intelligent decision-making features to make the application highly engaging.</li>
+                        </ul>
+                    </div>
+                    <div class="proj-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">Unity</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="proj-header">
+                            <div class="proj-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <a style="color: #06b6d4;" href="https://github.com/Weliviti" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                        </div>
+                        <h3 class="proj-title">Smart Campus API</h3>
+                        <ul class="proj-desc">
+                            <li>Engineered a JAX-RS RESTful API deployed on an embedded Apache Tomcat 9 server architecture.</li>
+                            <li>Managed live campus infrastructure resources utilizing thread-safe data layers.</li>
+                            <li>Implemented extensive status constraints and semantic web discovery routing workflows.</li>
+                            <li>Designed a bundled standalone desktop terminal system to validate real-time connection nodes.</li>
+                        </ul>
+                    </div>
+                    <div class="proj-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">JAX-RS</span>
+                        <span class="tag">Tomcat</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">CORE_MODULES</h2>
+            <div class="glow-line"></div>
+            
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <div class="skills-icon"><i class="fa-solid fa-code-terminal"></i></div>
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">Python, Java, OOP, JavaScript, React, FastAPI, HTML, CSS, Tailwind CSS, Unity WebGL, Gemini API.</div>
+                </div>
+                <div class="skills-card">
+                    <div class="skills-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Professional Skills</h3>
+                    <div class="skills-list">Problem Solving, Team Collaboration, Critical Thinking, Communication, Time Management, Adaptability.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">INITIALIZE_CONTACT</h2>
+            <div class="glow-line"></div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-left">
+                    <a href="mailto:walivitigodaashen@gmail.com" class="info-card">
+                        <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <div class="info-label">EMAIL_ADDR</div>
+                            <div class="info-text">walivitigodaashen@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Weliviti" target="_blank" class="info-card">
+                        <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <div class="info-label">GITHUB_REMOTE</div>
+                            <div class="info-text">github.com/Weliviti</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashen-walivitigoda/" target="_blank" class="info-card">
+                        <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div>
+                            <div class="info-label">LINKEDIN_NODE</div>
+                            <div class="info-text">Ashen Welivitigoda</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-right">
+                    <form action="#" onsubmit="event.preventDefault(); alert('Packet transmitted successfully.');">
+                        <div class="form-group">
+                            <label>USER_ID (Name)</label>
+                            <input type="text" class="form-input" placeholder="Identify yourself" required>
+                        </div>
+                        <div class="form-group">
+                            <label>RETURN_PATH (Email)</label>
+                            <input type="email" class="form-input" placeholder="Your connection node" required>
+                        </div>
+                        <div class="form-group">
+                            <label>PAYLOAD (Message)</label>
+                            <textarea class="form-input" placeholder="Write message string..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Transmit Packet <i class="fa-solid fa-satellite-dish"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
