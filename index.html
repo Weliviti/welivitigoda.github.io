@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.; font-src 'self' https://cdnjs.cloudflare.; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
+    
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
     <title>Sandesh Welivitigoda | Cyber Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -196,7 +205,7 @@
                     <div>
                         <div class="proj-header">
                             <div class="proj-icon"><i class="fa-solid fa-network-wired"></i></div>
-                            <a style="color: #06b6d4;" href="https://github.com/Weliviti/CareerVerse" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                            <a style="color: #06b6d4;" href="https://github.com/Weliviti/CareerVerse" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-lg"></i></a>
                         </div>
                         <h3 class="proj-title">CareerVerse</h3>
                         <ul class="proj-desc">
@@ -218,7 +227,7 @@
                     <div>
                         <div class="proj-header">
                             <div class="proj-icon"><i class="fa-solid fa-layer-group"></i></div>
-                            <a style="color: #06b6d4;" href="https://github.com/Weliviti" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                            <a style="color: #06b6d4;" href="https://github.com/Weliviti" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-lg"></i></a>
                         </div>
                         <h3 class="proj-title">Smart Campus API</h3>
                         <ul class="proj-desc">
@@ -273,14 +282,14 @@
                             <div class="info-text">walivitigodaashen@gmail.com</div>
                         </div>
                     </a>
-                    <a href="https://github.com/Weliviti" target="_blank" class="info-card">
+                    <a href="https://github.com/Weliviti" target="_blank" rel="noopener noreferrer" class="info-card">
                         <div class="info-icon"><i class="fa-brands fa-github"></i></div>
                         <div>
                             <div class="info-label">GITHUB_REMOTE</div>
                             <div class="info-text">github.com/Weliviti</div>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/ashen-walivitigoda/" target="_blank" class="info-card">
+                    <a href="https://www.linkedin.com/in/ashen-walivitigoda/" target="_blank" rel="noopener noreferrer" class="info-card">
                         <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                         <div>
                             <div class="info-label">LINKEDIN_NODE</div>
@@ -324,7 +333,7 @@
                 setTimeout(function() {
                     preloader.style.display = 'none';
                 }, 500);
-            }, 2500); // 2.5 second delay matching the loading visual speed
+            }, 2500);
         });
     </script>
 
